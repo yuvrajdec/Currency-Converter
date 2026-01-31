@@ -67,11 +67,10 @@ function App() {
       e.preventDefault();
       convert();
     }}
-    className='relative z-10 bg-white/ backdrop-blur-md sm:p-6 md:p-8 rounded-xl shadow-lg w-11/12 sm:w-96 md:w-1/2 lg:w-1/3 flex flex-col items-center gap-4 sm:gap-6 '
+    className='relative z-10 bg-white/ backdrop-blur-md shadow-lg  flex flex-col items-center gap-4 p-8'
     >
 
       <Input 
-      className="w-full sm:w-72 md:w-80"
       label="From"
       amount={amount}
       currencyOptions={options}
@@ -84,16 +83,16 @@ function App() {
       selectCurrency={from}
       />
       
-      <div className='flex justify-center gap-10'>
+      <div className='flex justify-center gap-4'>
         <button
       type='button'
-      className='h-16 w-24 bg-orange-500 rounded text-xl text-white font-extrabold flex items-center justify-center transform active:scale-90 transition'
+      className='h-16 w-38 bg-orange-500 hover:bg-orange-600 rounded-full text-xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
       onClick={swap}
       ><HiSwitchHorizontal size={50}/></button>
 
       <button
       type='button'
-      className='h-16 w-24 bg-orange-500 rounded text-xl text-white font-extrabold flex items-center justify-center transform active:scale-90 transition'
+      className='h-16 w-38 bg-orange-500 hover:bg-orange-600 rounded-full text-xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
       onClick={reset}
       ><GrPowerReset size={40}/></button>
       </div>
@@ -110,9 +109,19 @@ function App() {
       amountDisable
       />
 
-      <button className='bg-orange-500 h-15 w-120 text-pink text-white text-xl font-bold rounded'>
-        Convert {from.toUpperCase()} to {to.toUpperCase()}
-      </button>
+      <div className="relative inline-block w-full">
+        {/* Background plate */}
+        <div className="absolute inset-0 rounded-md z-0"></div>
+
+          <button
+            className="relative z-10 w-full h-14        bg-orange-500 text-white font-bold text-xl
+               rounded-full transition-transform duration-150 ease-out
+               hover:-translate-y-1 active:translate-y-0 hover:bg-orange-600 cursor-pointer"
+          >
+          Convert {from.toUpperCase()} to {to.toUpperCase()}
+        </button>
+      </div>
+
 
     </form>
 
