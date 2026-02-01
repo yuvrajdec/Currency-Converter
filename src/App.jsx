@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-    <div className='relative h-screen overflow-hidden flex justify-center items-center gap-4'>
+    <div className='relative min-h-screen overflow-hidden flex justify-center items-center gap-4'>
     <video 
     autoPlay
     loop
