@@ -15,20 +15,20 @@ const Input = ({
   const amountInputId = useId()
   return (
     <div
-     className={`bg-white text-black rounded grid grid-cols-2 grid-rows-2 p-6 gap-4 ${className}`}>
+     className={`sm:h-42 sm:w-120 bg-white text-black rounded grid grid-cols-2 grid-rows-2 p-6 gap-4 ${className}`}>
       <label htmlFor={amountInputId}
-      className='self-start justify-self-start text-base'>
+      className='self-start justify-self-start text-base sm:text-2xl'>
         {label}
         </label>
 
        <p 
-       className='self-start justify-self-end text-base'
+       className='self-start justify-self-end text-base sm:text-2xl'
        >Currency Type
        </p>
 
         <input 
         id={amountInputId}
-        className='focus:outline-none text-xs w-32'
+        className='focus:outline-none text-xs sm:text-2xl w-32 sm:w-60'
         type="number"
         placeholder='enter your amount'
         disabled = {amountDisable}
@@ -42,7 +42,7 @@ const Input = ({
         <select
          name="currency"
           
-          className='w-24 self-end justify-self-end focus:outline-none cursor-pointer'
+          className='w-24 sm:h-14 sm:text-2xl self-end justify-self-end focus:outline-none cursor-pointer'
           value={selectCurrency}
           onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled = {currencyDisable}

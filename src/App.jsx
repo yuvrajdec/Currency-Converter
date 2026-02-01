@@ -5,8 +5,6 @@ import {HiSwitchHorizontal} from 'react-icons/hi'
 import { GrPowerReset } from "react-icons/gr"
 import FallingCash from "./assets/FallingCash.mp4";
 
-
-
 function App() {
 
   const [amount, setAmount] = useState("");
@@ -54,6 +52,7 @@ function App() {
     autoPlay
     loop
     muted
+    preload='auto'
     className='absolute top-0 left-0 w-full h-full object-cover'
     >
       <source src = {FallingCash}
@@ -67,7 +66,7 @@ function App() {
       e.preventDefault();
       convert();
     }}
-    className='relative z-10 bg-white/ backdrop-blur-md shadow-lg  flex flex-col items-center gap-4 p-8'
+    className='relative z-10 backdrop-blur-md shadow-lg flex flex-col items-center gap-4 sm:gap-6 p-8 sm:p-10 sm:rounded-2xl'
     >
 
       <Input 
@@ -86,15 +85,15 @@ function App() {
       <div className='flex justify-center gap-4'>
         <button
       type='button'
-      className='h-16 w-38 bg-orange-500 hover:bg-orange-600 rounded-full text-xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
+      className='h-16 sm:h-24 w-38 sm:w-50 bg-orange-500 hover:bg-orange-600 rounded-full text-4xl sm:text-7xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
       onClick={swap}
-      ><HiSwitchHorizontal size={50}/></button>
+      ><HiSwitchHorizontal /></button>
 
       <button
       type='button'
-      className='h-16 w-38 bg-orange-500 hover:bg-orange-600 rounded-full text-xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
+      className='h-16 sm:h-24 w-38 sm:w-50 bg-orange-500 hover:bg-orange-600 rounded-full text-4xl sm:text-7xl text-white font-extrabold flex items-center justify-center transition-transform duration-150 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer'
       onClick={reset}
-      ><GrPowerReset size={40}/></button>
+      ><GrPowerReset /></button>
       </div>
       
 
@@ -114,7 +113,8 @@ function App() {
         <div className="absolute inset-0 rounded-md z-0"></div>
 
           <button
-            className="relative z-10 w-full h-14        bg-orange-500 text-white font-bold text-xl
+            className="relative z-10 w-full h-14 sm:h-24
+             bg-orange-500 text-white font-bold text-xl sm:text-3xl
                rounded-full transition-transform duration-150 ease-out
                hover:-translate-y-1 active:translate-y-0 hover:bg-orange-600 cursor-pointer"
           >
